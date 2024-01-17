@@ -1,0 +1,31 @@
+:root{
+    --header-height: 100px;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #000;
+
+    & > h1 {
+        font-family: '';
+        font-size: 30px;
+        margin: 0;
+    }
+}
+
+.header > .logo{
+    height: calc(var(--header-height) - 20px);
+    object-fit: contain;
+    margin-right: 20px;
+}
