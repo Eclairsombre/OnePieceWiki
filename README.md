@@ -21,3 +21,9 @@ Then you have to install the dependencies :
 ```bash
 npm i
 ```
+
+Then you can start the project :
+
+```bash
+npm run dev
+```
