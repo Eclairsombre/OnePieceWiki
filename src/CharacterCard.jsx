@@ -8,7 +8,7 @@ function CharacterCard(characters) {
     <div>
       <div className="CardList">
         {characters.characters.map((character) => (
-          <div className="Card">
+          <div className="Card" key={character.id}>
             <h3 className="CardName">{character.name}</h3>
             <p>{character.description}</p>
             <img
