@@ -15,6 +15,7 @@ function HomePage() {
   const [character, setCharacter] = useState([]);
   const [boat, setBoat] = useState([]);
   const [locate, setLocate] = useState([]);
+  const [researchBar, setResearchBar] = useState("");
 
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/arcs/fr";
@@ -136,12 +137,23 @@ function HomePage() {
     };
   }, []);
 
+  const handleInputChange = (event) => {
+    setResearchBar(event.target.value);
+  };
+
   return (
     <div>
       <h1>Home Page</h1>
       <p>This is the home page.</p>
       <h2>Character</h2>
-      <CharacterCard characters={character} />
+      <input
+        type="text"
+        className="textInput"
+        value={researchBar}
+        onChange={handleInputChange}
+        placeholder="Search a Character here"
+      />
+      <CharacterCard characters={character} researchBar={researchBar} />
     </div>
   );
 }
