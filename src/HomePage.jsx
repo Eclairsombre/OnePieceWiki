@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
+import Header from "./Header";
 import CharacterCard from "./CharacterCard";
 
 function HomePage() {
@@ -138,8 +139,7 @@ function HomePage() {
 
   return (
     <div>
-      <h1>Home Page</h1>
-      <p>This is the home page.</p>
+      <Header />
       <h2>Character</h2>
       <CharacterCard characters={character} />
     </div>
