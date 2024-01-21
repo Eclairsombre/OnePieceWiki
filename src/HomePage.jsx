@@ -30,11 +30,23 @@ function HomePage() {
   getLocate(setLocate);
   
 
+  const handleInputChange = (event) => {
+    setResearchBar(event.target.value);
+  };
+
   return (
     <div>
-      <Header />
-      <h2>Characters</h2>
-      <CharacterCard characters={character} />
+      <h1>Home Page</h1>
+      <p>This is the home page.</p>
+      <h2>Character</h2>
+      <input
+        type="text"
+        className="textInput"
+        value={researchBar}
+        onChange={handleInputChange}
+        placeholder="Search a Character here"
+      />
+      <CharacterCard characters={character} researchBar={researchBar} />
     </div>
   );
 }
@@ -177,26 +189,7 @@ function getLocate(setLocate){
       setLocate(temp);
     };
   }, []);
-
-  const handleInputChange = (event) => {
-    setResearchBar(event.target.value);
-  };
-
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <p>This is the home page.</p>
-      <h2>Character</h2>
-      <input
-        type="text"
-        className="textInput"
-        value={researchBar}
-        onChange={handleInputChange}
-        placeholder="Search a Character here"
-      />
-      <CharacterCard characters={character} researchBar={researchBar} />
-    </div>
-  );
 }
+
 
 export default HomePage;
