@@ -1,13 +1,12 @@
 import React from "react";
-import { useEffect } from "react";
 
 import "./CharacterCard.css";
 
-function CharacterCard(characters) {
+function CharacterCard(props) {
   return (
     <div>
       <div className="CardList">
-        {characters.characters.map((character) => (
+        {props.characters.map((character) => (
           <div className="Card" key={character.id}>
             <h3 className="CardName">{character.name}</h3>
             <p>{character.description}</p>
