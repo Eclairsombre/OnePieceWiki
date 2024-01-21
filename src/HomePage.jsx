@@ -16,6 +16,7 @@ function HomePage() {
   const [character, setCharacter] = useState([]);
   const [boat, setBoat] = useState([]);
   const [locate, setLocate] = useState([]);  
+  const [researchBar, setResearchBar] = useState("");
 
   getCharacters(setCharacter);
   getCrew(setCrew);
@@ -176,6 +177,26 @@ function getLocate(setLocate){
       setLocate(temp);
     };
   }, []);
+
+  const handleInputChange = (event) => {
+    setResearchBar(event.target.value);
+  };
+
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <p>This is the home page.</p>
+      <h2>Character</h2>
+      <input
+        type="text"
+        className="textInput"
+        value={researchBar}
+        onChange={handleInputChange}
+        placeholder="Search a Character here"
+      />
+      <CharacterCard characters={character} researchBar={researchBar} />
+    </div>
+  );
 }
 
 export default HomePage;
