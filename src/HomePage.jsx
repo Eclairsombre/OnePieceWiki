@@ -15,7 +15,7 @@ function HomePage() {
   const [crew, setCrew] = useState([]);
   const [character, setCharacter] = useState([]);
   const [boat, setBoat] = useState([]);
-  const [locate, setLocate] = useState([]);  
+  const [locate, setLocate] = useState([]);
   const [researchBar, setResearchBar] = useState("");
 
   getCharacters(setCharacter);
@@ -28,7 +28,6 @@ function HomePage() {
   getTome(setTome);
   getEpisode(setEpisode);
   getLocate(setLocate);
-  
 
   const handleInputChange = (event) => {
     setResearchBar(event.target.value);
@@ -36,6 +35,7 @@ function HomePage() {
 
   return (
     <div>
+      <Header />
       <h1>Home Page</h1>
       <p>This is the home page.</p>
       <h2>Character</h2>
@@ -51,7 +51,7 @@ function HomePage() {
   );
 }
 
-function getCharacters(setCharacter){
+function getCharacters(setCharacter) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/characters/fr";
     var request = new XMLHttpRequest();
@@ -65,7 +65,7 @@ function getCharacters(setCharacter){
   }, []);
 }
 
-function getCrew(setCrew){
+function getCrew(setCrew) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/crews/fr";
     var request = new XMLHttpRequest();
@@ -79,7 +79,7 @@ function getCrew(setCrew){
   }, []);
 }
 
-function getHaki(setHaki){
+function getHaki(setHaki) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/hakis/fr";
     var request = new XMLHttpRequest();
@@ -93,7 +93,7 @@ function getHaki(setHaki){
   }, []);
 }
 
-function getMovie(setMovie){
+function getMovie(setMovie) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/movies/fr";
     var request = new XMLHttpRequest();
@@ -107,7 +107,7 @@ function getMovie(setMovie){
   }, []);
 }
 
-function getBoat(setBoat){
+function getBoat(setBoat) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/boats/fr";
     var request = new XMLHttpRequest();
@@ -121,7 +121,7 @@ function getBoat(setBoat){
   }, []);
 }
 
-function getArc(setArc){
+function getArc(setArc) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/arcs/fr";
     var request = new XMLHttpRequest();
@@ -135,7 +135,7 @@ function getArc(setArc){
   }, []);
 }
 
-function getFruit(setFruit){
+function getFruit(setFruit) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/fruits/fr";
     var request = new XMLHttpRequest();
@@ -149,7 +149,7 @@ function getFruit(setFruit){
   }, []);
 }
 
-function getTome(setTome){
+function getTome(setTome) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/tomes/fr";
     var request = new XMLHttpRequest();
@@ -163,7 +163,7 @@ function getTome(setTome){
   }, []);
 }
 
-function getEpisode(setEpisode){
+function getEpisode(setEpisode) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/episodes/fr";
     var request = new XMLHttpRequest();
@@ -177,7 +177,7 @@ function getEpisode(setEpisode){
   }, []);
 }
 
-function getLocate(setLocate){
+function getLocate(setLocate) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/locates/fr";
     var request = new XMLHttpRequest();
@@ -190,6 +190,5 @@ function getLocate(setLocate){
     };
   }, []);
 }
-
 
 export default HomePage;
