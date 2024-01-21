@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
+import CharacterCard from "./CharacterCard";
+
 function HomePage() {
   const [arc, setArc] = useState([]);
   const [fruit, setFruit] = useState([]);
@@ -138,6 +140,8 @@ function HomePage() {
     <div>
       <h1>Home Page</h1>
       <p>This is the home page.</p>
+      <h2>Character</h2>
+      <CharacterCard characters={character} />
     </div>
   );
 }
