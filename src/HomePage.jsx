@@ -140,7 +140,7 @@ function HomePage() {
   return (
     <div>
       <Header />
-      <h2>Character</h2>
+      <h2>Characters</h2>
       <CharacterCard characters={character} />
     </div>
   );

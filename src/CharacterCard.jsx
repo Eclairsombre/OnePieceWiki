@@ -6,9 +6,6 @@ import "./CharacterCard.css";
 function CharacterCard(characters) {
   return (
     <div>
-      <h1>Character</h1>
-      <p>This is the character page.</p>
-      <h2>Character</h2>
       <div className="CardList">
         {characters.characters.map((character) => (
           <div className="Card">
