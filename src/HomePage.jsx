@@ -35,7 +35,6 @@ function HomePage() {
   const handleInputChange = (event) => {
     setResearchBar(event.target.value);
   };
-  console.log(character);
 
   return (
     <div>

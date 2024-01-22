@@ -9,7 +9,7 @@ function CharacterCard({ characters, researchBar, setSelectCharacter }) {
         {characters.map((character) =>
           character.name.toLowerCase().includes(researchBar.toLowerCase()) ||
           researchBar === "" ? (
-            <div className="Card" onClick={() => setSelectCharacter(character)}>
+            <div className="Card" onClick={() => setSelectCharacter(character)} key={character.id}>
               <h3 className="CardName">{character.name}</h3>
               <p>{character.description}</p>
               <img
