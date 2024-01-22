@@ -5,6 +5,8 @@ import { useState } from "react";
 import Header from "./Header";
 import CharacterCard from "./CharacterCard";
 import CharacterPage from "./CharacterPage";
+import FruitCard from "./FruitCard";
+import FruitPage from "./FruitPage";
 
 function HomePage() {
   const [arc, setArc] = useState([]);
@@ -20,6 +22,7 @@ function HomePage() {
   const [researchBar, setResearchBar] = useState("");
 
   const [selectCharacter, setSelectCharacter] = useState([]);
+  const [selectFruit, setSelectFruit] = useState([]);
 
   getCharacters(setCharacter);
   getCrew(setCrew);
@@ -35,35 +38,61 @@ function HomePage() {
   const handleInputChange = (event) => {
     setResearchBar(event.target.value);
   };
-  console.log(character);
 
   return (
     <div>
-      {selectCharacter.length != 0 ? (
-        <CharacterPage
-          character={selectCharacter}
-          setSelectCharacter={setSelectCharacter}
-        />
-      ) : (
-        <div>
-          <Header />
-          <h1>Home Page</h1>
-          <p>This is the home page.</p>
-          <h2>Character</h2>
-          <input
-            type="text"
-            className="textInput"
-            value={researchBar}
-            onChange={handleInputChange}
-            placeholder="Search a Character here"
+      <div>
+        {selectFruit.length != 0 ? (
+          <FruitPage
+            selectFruit={selectFruit}
+            setSelectFruit={setSelectFruit}
           />
-          <CharacterCard
-            characters={character}
-            researchBar={researchBar}
+        ) : (
+          <div>
+            <Header />
+            <h1>Devil Fruit</h1>
+
+            <input
+              type="text"
+              className="textInput"
+              value={researchBar}
+              onChange={handleInputChange}
+              placeholder="Search a Devil Fruit here"
+            />
+            <FruitCard
+              fruits={fruit}
+              researchBar={researchBar}
+              setSelectFruit={setSelectFruit}
+            />
+          </div>
+        )}
+      </div>
+      <div>
+        {selectCharacter.length != 0 ? (
+          <CharacterPage
+            character={selectCharacter}
             setSelectCharacter={setSelectCharacter}
           />
-        </div>
-      )}
+        ) : (
+          <div>
+            <Header />
+            <h1>Characters</h1>
+
+            <input
+              type="text"
+              className="textInput"
+              value={researchBar}
+              onChange={handleInputChange}
+              placeholder="Search a Character here"
+            />
+            <CharacterCard
+              characters={character}
+              researchBar={researchBar}
+              setSelectCharacter={setSelectCharacter}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

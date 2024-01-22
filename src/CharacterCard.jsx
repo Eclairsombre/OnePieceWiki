@@ -11,7 +11,6 @@ function CharacterCard({ characters, researchBar, setSelectCharacter }) {
           researchBar === "" ? (
             <div className="Card" onClick={() => setSelectCharacter(character)}>
               <h3 className="CardName">{character.name}</h3>
-              <p>{character.description}</p>
               <img
                 className="CardImage"
                 src={"src/assets/pictureCharacters/" + character.id + ".png"}
