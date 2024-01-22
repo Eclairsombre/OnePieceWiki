@@ -5,23 +5,29 @@ import ShowDevilFruit from "./ShowDevilFruit";
 
 function CharacterPage({ character, setSelectCharacter }) {
   return (
-    <div>
+    <div className="character-page-container">
       <Header />
-      <div className="CharacterPage">
-        <button onClick={() => setSelectCharacter([])} className="BackButton">
+      <button onClick={() => setSelectCharacter([])} className="BackButton">
           Back
-        </button>
-        <h1>{character.name}</h1>
-        <p>{character.description}</p>
-        <img
-          src={"src/assets/pictureCharacters/" + character.id + ".png"}
-          alt={character.name}
-        />
-        <p>Age : {character.age}</p>
-        <p>Height : {character.size}</p>
-        <p>Bounty : {character.bounty}</p>
-        <p>Role : {character.job}</p>
-        <p>Status : {character.status}</p>
+      </button>
+      <div className="CharacterPage">
+        <div className="infos">
+          <div className="presentation">
+          <h1 className="CharacterName">{character.name}</h1>
+          <img
+            src={"src/assets/pictureCharacters/" + character.id + ".png"}
+            alt={character.name}
+            className="CharacterImage"
+          />
+          </div>
+          <div className="assets">
+            <p className="pAge">Age : {character.age}</p>
+            <p className="pSize">Height : {character.size}</p>
+            <p className="pBounty">Bounty : {character.bounty}</p>
+            <p className="pJob">Role : {character.job}</p>
+            <p className="pStatus">Status : {character.status}</p>
+          </div>
+        </div>
 
         {character.fruit && <ShowDevilFruit devilFruit={character.fruit} />}
       </div>

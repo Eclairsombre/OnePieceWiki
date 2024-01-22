@@ -1,0 +1,26 @@
+.dfContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.dfMainInfos, .dfDesc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: auto;
+    text-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+    .dfContainer{
+        flex-direction: column;
+    }
+    .dfMainInfos, .dfDesc{
+        width: 100%;
+    }
+}

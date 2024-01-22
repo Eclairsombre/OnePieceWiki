@@ -9,7 +9,7 @@
     right: 0;
     height: var(--header-height);
     z-index: 100;
-    background-color: #fff;
+    background-color: #242424;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
@@ -18,9 +18,11 @@
     color: #000;
 
     & > h1 {
-        font-family: '';
-        font-size: 30px;
+        font-family: 'OnePiece';
+        font-size: 4rem;
         margin: 0;
+        padding: 1rem;
+        color: #fff;
     }
 }
 

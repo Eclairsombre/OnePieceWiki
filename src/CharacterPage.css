@@ -16,3 +16,42 @@
     top: 130px;
     left: 10px;
 }
+
+.CharacterPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.infos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.CharacterName {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.assets > p{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .infos{
+        flex-direction: column;
+    }
+    .assets > p{
+        font-size: 2rem;
+    }
+    
+}
