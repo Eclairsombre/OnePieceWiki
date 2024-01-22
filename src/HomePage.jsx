@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import Header from "./Header";
 import CharacterCard from "./CharacterCard";
+import CharacterPage from "./CharacterPage";
 
 function HomePage() {
   const [arc, setArc] = useState([]);
@@ -17,6 +18,8 @@ function HomePage() {
   const [boat, setBoat] = useState([]);
   const [locate, setLocate] = useState([]);
   const [researchBar, setResearchBar] = useState("");
+
+  const [selectCharacter, setSelectCharacter] = useState([]);
 
   getCharacters(setCharacter);
   getCrew(setCrew);
@@ -32,21 +35,35 @@ function HomePage() {
   const handleInputChange = (event) => {
     setResearchBar(event.target.value);
   };
+  console.log(character);
 
   return (
     <div>
-      <Header />
-      <h1>Home Page</h1>
-      <p>This is the home page.</p>
-      <h2>Character</h2>
-      <input
-        type="text"
-        className="textInput"
-        value={researchBar}
-        onChange={handleInputChange}
-        placeholder="Search a Character here"
-      />
-      <CharacterCard characters={character} researchBar={researchBar} />
+      {selectCharacter.length != 0 ? (
+        <CharacterPage
+          character={selectCharacter}
+          setSelectCharacter={setSelectCharacter}
+        />
+      ) : (
+        <div>
+          <Header />
+          <h1>Home Page</h1>
+          <p>This is the home page.</p>
+          <h2>Character</h2>
+          <input
+            type="text"
+            className="textInput"
+            value={researchBar}
+            onChange={handleInputChange}
+            placeholder="Search a Character here"
+          />
+          <CharacterCard
+            characters={character}
+            researchBar={researchBar}
+            setSelectCharacter={setSelectCharacter}
+          />
+        </div>
+      )}
     </div>
   );
 }

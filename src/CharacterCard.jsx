@@ -2,14 +2,14 @@ import React from "react";
 
 import "./CharacterCard.css";
 
-function CharacterCard({ characters, researchBar }) {
+function CharacterCard({ characters, researchBar, setSelectCharacter }) {
   return (
     <div>
       <div className="CardList">
         {characters.map((character) =>
           character.name.toLowerCase().includes(researchBar.toLowerCase()) ||
           researchBar === "" ? (
-            <div className="Card">
+            <div className="Card" onClick={() => setSelectCharacter(character)}>
               <h3 className="CardName">{character.name}</h3>
               <p>{character.description}</p>
               <img
