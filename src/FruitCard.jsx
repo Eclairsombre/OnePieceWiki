@@ -9,7 +9,7 @@ function FruitCard({ fruits, researchBar, setSelectFruit }) {
         {fruits.map((fruit) =>
           fruit.name.toLowerCase().includes(researchBar.toLowerCase()) ||
           researchBar === "" ? (
-            <div className="Card" onClick={() => setSelectFruit(fruit)}>
+            <div className="Card" onClick={() => setSelectFruit(fruit)} key={fruit.id}>
               <h3 className="CardName">
                 {fruit.name} / {fruit.roman_name}
               </h3>
