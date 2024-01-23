@@ -9,11 +9,23 @@ import {
 
 import "./index.css";
 import HomePage from "./HomePage.jsx";
+import DisplayCharacters from "./DisplayCharacters.jsx";
+import DisplayFruits from "./DisplayFruits.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/characters",
+    element: <DisplayCharacters />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/fruits",
+    element: <DisplayFruits />,
     errorElement: <ErrorPage />,
   },
 ]);
