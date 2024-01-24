@@ -18,6 +18,9 @@ const Header = () => {
           <Link to="/crews">
             <button className="button">Crews</button>
           </Link>
+          <Link to="/haki">
+            <button className="button">Haki</button>
+          </Link>
         </div>
         <h1>OnePiece Wiki</h1>
       </header>

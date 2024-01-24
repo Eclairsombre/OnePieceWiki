@@ -9,6 +9,7 @@ import HomePage from "./HomePage.jsx";
 import DisplayCharacters from "./DisplayCharacters.jsx";
 import DisplayFruits from "./DisplayFruits.jsx";
 import DisplayCrews from "./DisplayCrew.jsx";
+import DisplayHaki from "./DisplayHaki.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
   {
     path: "/crews",
     element: <DisplayCrews />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/haki",
+    element: <DisplayHaki />,
     errorElement: <ErrorPage />,
   },
 ]);
