@@ -2,15 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import ErrorPage from "./ErrorPage.jsx";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
 import HomePage from "./HomePage.jsx";
 import DisplayCharacters from "./DisplayCharacters.jsx";
 import DisplayFruits from "./DisplayFruits.jsx";
+import DisplayCrews from "./DisplayCrew.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: "/fruits",
     element: <DisplayFruits />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/crews",
+    element: <DisplayCrews />,
     errorElement: <ErrorPage />,
   },
 ]);
