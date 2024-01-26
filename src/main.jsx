@@ -10,6 +10,7 @@ import DisplayCharacters from "./DisplayCharacters.jsx";
 import DisplayFruits from "./DisplayFruits.jsx";
 import DisplayCrews from "./DisplayCrew.jsx";
 import DisplayHaki from "./DisplayHaki.jsx";
+import DisplayLocate from "./DisplayLocate.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
   {
     path: "/haki",
     element: <DisplayHaki />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/locations",
+    element: <DisplayLocate />,
     errorElement: <ErrorPage />,
   },
 ]);
