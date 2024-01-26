@@ -36,7 +36,9 @@ function HomePage() {
   */
 
   return (
-    <div><Header /></div>
+    <div>
+      <Header />
+    </div>
   );
 }
 

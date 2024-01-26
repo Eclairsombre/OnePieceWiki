@@ -24,6 +24,9 @@ const Header = () => {
           <Link to="/locations">
             <button className="button">Locations</button>
           </Link>
+          <Link to="/tomes">
+            <button className="button">Tomes</button>
+          </Link>
         </div>
         <h1>OnePiece Wiki</h1>
       </header>

@@ -11,6 +11,7 @@ import DisplayFruits from "./DisplayFruits.jsx";
 import DisplayCrews from "./DisplayCrew.jsx";
 import DisplayHaki from "./DisplayHaki.jsx";
 import DisplayLocate from "./DisplayLocate.jsx";
+import DisplayTome from "./DisplayTome.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
   {
     path: "/locations",
     element: <DisplayLocate />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/tomes",
+    element: <DisplayTome />,
     errorElement: <ErrorPage />,
   },
 ]);
