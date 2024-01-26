@@ -8,17 +8,17 @@ function CharacterPage({ character, setSelectCharacter }) {
     <div className="character-page-container">
       <Header />
       <button onClick={() => setSelectCharacter([])} className="BackButton">
-          Back
+        Back
       </button>
       <div className="CharacterPage">
         <div className="infos">
           <div className="presentation">
-          <h1 className="CharacterName">{character.name}</h1>
-          <img
-            src={"src/assets/pictureCharacters/" + character.id + ".png"}
-            alt={character.name}
-            className="CharacterImage"
-          />
+            <h1 className="CharacterName">{character.name}</h1>
+            <img
+              src={"src/assets/pictureCharacters/" + character.id + ".png"}
+              alt={character.name}
+              className="CharacterImage"
+            />
           </div>
           <div className="assets">
             <p className="pAge">Age : {character.age}</p>

@@ -3,10 +3,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 import Header from "./Header";
-import CharacterCard from "./CharacterCard";
-import CharacterPage from "./CharacterPage";
 
 function HomePage() {
+  /*
   const [arc, setArc] = useState([]);
   const [fruit, setFruit] = useState([]);
   const [tome, setTome] = useState([]);
@@ -18,8 +17,6 @@ function HomePage() {
   const [boat, setBoat] = useState([]);
   const [locate, setLocate] = useState([]);
   const [researchBar, setResearchBar] = useState("");
-
-  const [selectCharacter, setSelectCharacter] = useState([]);
 
   getCharacters(setCharacter);
   getCrew(setCrew);
@@ -36,38 +33,16 @@ function HomePage() {
     setResearchBar(event.target.value);
   };
 
+  */
+
   return (
     <div>
-      {selectCharacter.length != 0 ? (
-        <CharacterPage
-          character={selectCharacter}
-          setSelectCharacter={setSelectCharacter}
-        />
-      ) : (
-        <div>
-          <Header />
-          <h1>Home Page</h1>
-          <p>This is the home page.</p>
-          <h2>Character</h2>
-          <input
-            type="text"
-            className="textInput"
-            value={researchBar}
-            onChange={handleInputChange}
-            placeholder="Search a Character here"
-          />
-          <CharacterCard
-            characters={character}
-            researchBar={researchBar}
-            setSelectCharacter={setSelectCharacter}
-          />
-        </div>
-      )}
+      <Header />
     </div>
   );
 }
 
-function getCharacters(setCharacter) {
+export function getCharacters(setCharacter) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/characters/fr";
     var request = new XMLHttpRequest();
@@ -81,7 +56,7 @@ function getCharacters(setCharacter) {
   }, []);
 }
 
-function getCrew(setCrew) {
+export function getCrew(setCrew) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/crews/fr";
     var request = new XMLHttpRequest();
@@ -95,7 +70,7 @@ function getCrew(setCrew) {
   }, []);
 }
 
-function getHaki(setHaki) {
+export function getHaki(setHaki) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/hakis/fr";
     var request = new XMLHttpRequest();
@@ -109,7 +84,7 @@ function getHaki(setHaki) {
   }, []);
 }
 
-function getMovie(setMovie) {
+export function getMovie(setMovie) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/movies/fr";
     var request = new XMLHttpRequest();
@@ -123,7 +98,7 @@ function getMovie(setMovie) {
   }, []);
 }
 
-function getBoat(setBoat) {
+export function getBoat(setBoat) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/boats/fr";
     var request = new XMLHttpRequest();
@@ -137,7 +112,7 @@ function getBoat(setBoat) {
   }, []);
 }
 
-function getArc(setArc) {
+export function getArc(setArc) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/arcs/fr";
     var request = new XMLHttpRequest();
@@ -151,7 +126,7 @@ function getArc(setArc) {
   }, []);
 }
 
-function getFruit(setFruit) {
+export function getFruit(setFruit) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/fruits/fr";
     var request = new XMLHttpRequest();
@@ -165,7 +140,7 @@ function getFruit(setFruit) {
   }, []);
 }
 
-function getTome(setTome) {
+export function getTome(setTome) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/tomes/fr";
     var request = new XMLHttpRequest();
@@ -179,7 +154,7 @@ function getTome(setTome) {
   }, []);
 }
 
-function getEpisode(setEpisode) {
+export function getEpisode(setEpisode) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/episodes/fr";
     var request = new XMLHttpRequest();
@@ -193,7 +168,7 @@ function getEpisode(setEpisode) {
   }, []);
 }
 
-function getLocate(setLocate) {
+export function getLocate(setLocate) {
   useEffect(() => {
     var requestURL = "https://api.api-onepiece.com/v2/locates/fr";
     var request = new XMLHttpRequest();
