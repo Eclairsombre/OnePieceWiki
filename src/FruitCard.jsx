@@ -1,4 +1,6 @@
 import React from "react";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import "./FruitCard.css";
 
@@ -14,7 +16,7 @@ function FruitCard({ fruits, researchBar, setSelectFruit }) {
                 {fruit.name} / {fruit.roman_name}
               </h3>
 
-              <img
+              <LazyLoadImage
                 className="CardImage"
                 src={fruit.filename}
                 alt={fruit.name}

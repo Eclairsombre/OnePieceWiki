@@ -1,6 +1,8 @@
 import React from "react";
 
 import "./CharacterCard.css";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function LocateCard({ locates, researchBar, setSelectedLocate }) {
   return (
@@ -18,7 +20,7 @@ function LocateCard({ locates, researchBar, setSelectedLocate }) {
                 {locate.name} {locate.roman_name && `/ ${locate.roman_name}`}
               </h2>
 
-              <img
+              <LazyLoadImage
                 className="CardImage"
                 src={"src/assets/pictureLocates/" + locate.id + ".png"}
                 alt={locate.name}

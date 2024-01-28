@@ -1,6 +1,8 @@
 import React from "react";
 
 import "./FruitCard.css";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function HakiCard({ hakis, researchBar, setSelectedHaki }) {
   return (
@@ -18,7 +20,7 @@ function HakiCard({ hakis, researchBar, setSelectedHaki }) {
                 {haki.name} / {haki.roman_name}
               </h3>
 
-              <img
+              <LazyLoadImage
                 className="CardImage"
                 src={"src/assets/pictureHaki/" + haki.id + ".png"}
                 alt={haki.name}

@@ -1,6 +1,8 @@
 import React from "react";
 
 import "./CharacterCard.css";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function TomeCard({ tomes, researchBar, setSelectedTome }) {
   return (
@@ -16,7 +18,7 @@ function TomeCard({ tomes, researchBar, setSelectedTome }) {
             >
               <h2 className="CardName">{tome.title}</h2>
 
-              <img
+              <LazyLoadImage
                 className="CardImage"
                 src={"src/assets/pictureTome/" + tome.id + ".png"}
                 alt={tome.title}
