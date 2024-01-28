@@ -23,8 +23,26 @@ function TomePage({ tome, setSelectedTome }) {
           </div>
           <div className="assets">
             <p>Tome number : {tome.tome_number}</p>
-            <p>Publish date in Japan : {date2.slice(8,10) + "/" + date2.slice(5,7) + "/" + date2.slice(0,4)}</p>
-            <p>Publish date in France : {date.slice(8,10) + "/" + date.slice(5,7) + "/" + date.slice(0,4)}</p>
+            <p>
+              {date2 &&
+                `Publish date in Japan : ${
+                  date2.slice(8, 10) +
+                  "/" +
+                  date2.slice(5, 7) +
+                  "/" +
+                  date2.slice(0, 4)
+                }`}
+            </p>
+            <p>
+              {date &&
+                `Publish date in France : ${
+                  date.slice(8, 10) +
+                  "/" +
+                  date.slice(5, 7) +
+                  "/" +
+                  date.slice(0, 4)
+                }`}
+            </p>
           </div>
         </div>
       </div>
