@@ -47,3 +47,42 @@
         color: #fff;
     }
 }
+
+.separator{
+    height: 100px;
+}
+
+@media (prefers-color-scheme: light){
+    .header{
+        background-color: #f2f2f2;
+        color: #000;
+    }
+    .button{
+        background-color: #fff;
+        color: #000;
+    }
+    h1{
+        color: #000 !important;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .header{
+        padding: 10px;
+        flex-direction: column;
+        height: auto;
+    }
+    .header > h1{
+        display: none;
+    }
+    .header > .logo{
+        height: calc(var(--header-height) - 20px);
+    }
+    .button{
+        font-size: 1rem;
+        margin: 10px;
+    }
+    .separator{
+        height: 200px;
+    }
+}

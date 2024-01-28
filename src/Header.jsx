@@ -30,7 +30,7 @@ const Header = () => {
         </div>
         <h1>OnePiece Wiki</h1>
       </header>
-      <div style={{ height: 100 + "px" }}></div>
+      <div className="separator"></div>
     </>
   );
 };
