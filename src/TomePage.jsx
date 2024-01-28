@@ -16,7 +16,7 @@ function TomePage({ tome, setSelectedTome }) {
             <img
               src={"src/assets/pictureTome/" + tome.id + ".png"}
               alt={tome.title}
-              className="CharacterImage"
+              className="CharacterImage TomeImage"
             />
           </div>
           <div className="assets">

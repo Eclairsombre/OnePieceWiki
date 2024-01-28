@@ -18,7 +18,6 @@
 }
 
 .CharacterPage{
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,6 +39,12 @@
     font-size: 50px;
     font-weight: bold;
     margin-top: 50px;
+}
+
+.CharacterImage{
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
 }
 
 .assets > p{
