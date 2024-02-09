@@ -1,48 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Header from "./Header";
 import FruitCard from "./FruitCard";
 import FruitPage from "./FruitPage";
-import { getFruit } from './HomePage';
+import { getFruit } from "./HomePage";
+import ChargingWeel from "./ChargingWeel";
 
 const DisplayFruits = () => {
-    const [fruit, setFruit] = useState([]);
-    const [selectFruit, setSelectFruit] = useState([]);
-    const [researchBar, setResearchBar] = useState("");
+  const [fruit, setFruit] = useState([]);
+  const [selectFruit, setSelectFruit] = useState([]);
+  const [researchBar, setResearchBar] = useState("");
 
-    getFruit(setFruit);
+  getFruit(setFruit);
 
-    const handleInputChange = (event) => {
-        setResearchBar(event.target.value);
-    };
+  const handleInputChange = (event) => {
+    setResearchBar(event.target.value);
+  };
 
   return (
     <div>
-        {selectFruit.length != 0 ? (
-          <FruitPage
-            selectFruit={selectFruit}
-            setSelectFruit={setSelectFruit}
-          />
-        ) : (
-          <div>
-            <Header />
-            <h1>Devil Fruit</h1>
+      {selectFruit.length != 0 ? (
+        <FruitPage selectFruit={selectFruit} setSelectFruit={setSelectFruit} />
+      ) : (
+        <div>
+          <Header />
+          <h1>Devil Fruit</h1>
 
-            <input
-              type="text"
-              className="textInput"
-              value={researchBar}
-              onChange={handleInputChange}
-              placeholder="Search a Devil Fruit here"
-            />
+          <input
+            type="text"
+            className="textInput"
+            value={researchBar}
+            onChange={handleInputChange}
+            placeholder="Search a Devil Fruit here"
+          />
+          {fruit.length == 0 ? (
+            <ChargingWeel />
+          ) : (
             <FruitCard
               fruits={fruit}
               researchBar={researchBar}
               setSelectFruit={setSelectFruit}
             />
-          </div>
-        )}
+          )}
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default DisplayFruits
+export default DisplayFruits;

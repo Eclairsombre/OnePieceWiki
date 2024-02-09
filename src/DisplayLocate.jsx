@@ -3,6 +3,7 @@ import Header from "./Header";
 import LocateCard from "./LocateCard";
 import LocatePage from "./LocatePage";
 import { getLocate } from "./HomePage";
+import ChargingWeel from "./ChargingWeel";
 
 const DisplayLocate = () => {
   const [locate, setLocate] = useState([]);
@@ -34,11 +35,15 @@ const DisplayLocate = () => {
             onChange={handleInputChange}
             placeholder="Search a location here"
           />
-          <LocateCard
-            locates={locate}
-            researchBar={researchBar}
-            setSelectedLocate={setSelectedLocate}
-          />
+          {locate.length == 0 ? (
+            <ChargingWeel />
+          ) : (
+            <LocateCard
+              locates={locate}
+              researchBar={researchBar}
+              setSelectedLocate={setSelectedLocate}
+            />
+          )}
         </div>
       )}
     </div>

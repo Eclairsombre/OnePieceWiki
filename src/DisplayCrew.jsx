@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import FruitCard from "./FruitCard";
 import CrewCard from "./CrewCard";
 import CrewPage from "./CrewPage";
 import { getCrew } from "./HomePage";
+import ChargingWeel from "./ChargingWeel";
 
 const DisplayCrews = () => {
   const [crew, setCrew] = useState([]);
@@ -32,11 +32,15 @@ const DisplayCrews = () => {
             onChange={handleInputChange}
             placeholder="Search a Crew here"
           />
-          <CrewCard
-            crews={crew}
-            researchBar={researchBar}
-            setSelectedCrew={setSelectedCrew}
-          />
+          {crew.length == 0 ? (
+            <ChargingWeel />
+          ) : (
+            <CrewCard
+              crews={crew}
+              researchBar={researchBar}
+              setSelectedCrew={setSelectedCrew}
+            />
+          )}
         </div>
       )}
     </div>

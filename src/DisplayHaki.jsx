@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import FruitCard from "./FruitCard";
 import HakiCard from "./HakiCard";
 import HakiPage from "./HakiPage";
 import { getHaki } from "./HomePage";
+import ChargingWeel from "./ChargingWeel";
 
 const DisplayHaki = () => {
   const [haki, setHaki] = useState([]);
@@ -32,11 +32,15 @@ const DisplayHaki = () => {
             onChange={handleInputChange}
             placeholder="Search an Haki here"
           />
-          <HakiCard
-            hakis={haki}
-            researchBar={researchBar}
-            setSelectedHaki={setSelectedHaki}
-          />
+          {haki.length == 0 ? (
+            <ChargingWeel />
+          ) : (
+            <HakiCard
+              hakis={haki}
+              researchBar={researchBar}
+              setSelectedHaki={setSelectedHaki}
+            />
+          )}
         </div>
       )}
     </div>

@@ -3,6 +3,7 @@ import Header from "./Header";
 import TomeCard from "./TomeCard";
 import TomePage from "./TomePage";
 import { getTome } from "./HomePage";
+import ChargingWeel from "./ChargingWeel";
 
 const DisplayTome = () => {
   const [tome, setTome] = useState([]);
@@ -31,11 +32,15 @@ const DisplayTome = () => {
             onChange={handleInputChange}
             placeholder="Search a tome here"
           />
-          <TomeCard
-            tomes={tome}
-            researchBar={researchBar}
-            setSelectedTome={setSelectedTome}
-          />
+          {tome.length == 0 ? (
+            <ChargingWeel />
+          ) : (
+            <TomeCard
+              tomes={tome}
+              researchBar={researchBar}
+              setSelectedTome={setSelectedTome}
+            />
+          )}
         </div>
       )}
     </div>
